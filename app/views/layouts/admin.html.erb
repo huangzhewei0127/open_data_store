@@ -9,13 +9,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmMsed0zPFAgZoiy8oORF6kZTurpIrdg0&sensor=false&libraries=places">
-    </script>
   </head>
 
   <body>
     <%= render file: 'layouts/header' %>
-    <%= render file: 'layouts/flash' %>
-    <%= yield %>
+    <br>
+    <div class="row", style="width:100%;">
+      <%= render file: 'layouts/left_nav' %>
+      <div class="col-9">
+        <%= render file: 'layouts/flash' %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

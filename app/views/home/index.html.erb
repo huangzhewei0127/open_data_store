@@ -1,0 +1,45 @@
+<style>
+  .card:hover{
+    background-color:turquoise;
+    color: white;
+
+  }
+  .card{
+    margin: 10px 0px 20px 0px;
+  }
+</style>
+<div class="jumbotron" style="background:#fff;">
+  <div class="container">
+    <h1 class="display-4">Hello, Jelly!</h1>
+    <p class="lead">ODI Fridays are free lunchtime lectures for everyone. You bring your lunch, we provide tea and coffee, an interesting talk, and enough time to get back to your desk.</p>
+    <hr class="my-4">
+    <p>The NSPCC is on a data ethics journey to ensure all interactions support their work to safeguard children, and this includes how they work with advertising networks.
+
+        They started by looking at cookie tracking across our websites and understanding what is collected and where it goes. From data to people, this will be a practical presentation on the steps they’ve taken, what they’ve reviewed, the questions they’ve asked and their path forward.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">More</a>
+  </div>
+</div>
+
+<div class="container">
+  <%= simple_form_for @q, url: home_index_path, method: :get, wrapper_html: {class: "width:100%;"} do |f| %>
+    <div class="row" style="padding-left: 15px;">
+      <%= f.input :name_cont, class: 'string', type: 'text', placeholder: "please input product name", label: false, wrapper: false, input_html: {class:"col-md-3"} %>
+      <%= f.input :product_category_id_eq, collection: ProductCategory.all, prompt: "-- please choose category --", class: 'string', type: 'text', label: false, wrapper: false, input_html: {class:"col-md-3"} %>
+      &nbsp<%= f.submit "filter", class: "btn btn-outline-success col-md-1" %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-12" style=" float:right ">
+        <div class="card" style="width: 100%;border-color:light;box-shadow: 10px 10px 6px rgba(27, 27, 27, 0.05); ">
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text" ><%= product.description[0..20] %>...</p>
+            <a href="<%= home_path(product) %>"style=" float:right " class="btn btn-primary">book</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
