@@ -23,7 +23,7 @@
 <div class="container">
   <%= simple_form_for @q, url: home_index_path, method: :get, wrapper_html: {class: "width:100%;"} do |f| %>
     <div class="row" style="padding-left: 15px;">
-      <%= f.input :name_cont, class: 'string', type: 'text', placeholder: "please input product name", label: false, wrapper: false, input_html: {class:"col-md-3"} %>
+      <%= f.input :name_cont, class: 'string', type: 'text', placeholder: "please input product name", label: false, wrapper: false, input_html: {class:"col-md-3", style: "margin-right: 5px;"} %>
       <%= f.input :product_category_id_eq, collection: ProductCategory.all, prompt: "-- please choose category --", class: 'string', type: 'text', label: false, wrapper: false, input_html: {class:"col-md-3"} %>
       &nbsp<%= f.submit "filter", class: "btn btn-outline-success col-md-1" %>
     </div>
