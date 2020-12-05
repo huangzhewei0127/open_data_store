@@ -1,0 +1,33 @@
+<div class="container">
+  <p>
+    <strong>Code:</strong>
+    <%= @order.code %>
+  </p>
+
+  <p>
+    <strong>Product:</strong>
+    <%= @order.product_id %>
+  </p>
+
+  <p>
+    <strong>Number:</strong>
+    <%= @order.number %>
+  </p>
+
+  <p>
+    <strong>Amount:</strong>
+    <%= @order.amount %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= @order.user_id %>
+  </p>
+
+  <p>
+    <strong>Aasm state:</strong>
+    <%= @order.aasm_state %>
+  </p>
+
+  <%= link_to 'Back', orders_path %>
+</div>

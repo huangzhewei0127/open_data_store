@@ -1,0 +1,14 @@
+<div class="container">
+  <p>
+    <strong>Title:</strong>
+    <%= @product_category.title %>
+  </p>
+
+  <p>
+    <strong>Sorting:</strong>
+    <%= @product_category.sorting %>
+  </p>
+
+  <%= link_to 'Edit', edit_product_category_path(@product_category) %> |
+  <%= link_to 'Back', product_categories_path %>
+</div>
