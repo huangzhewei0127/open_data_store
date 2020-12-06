@@ -94,6 +94,8 @@ GEM
       activesupport (>= 3.0.0)
     erubi (1.10.0)
     execjs (2.7.0)
+    faker (2.15.1)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     geocoder (1.6.4)
     globalid (0.4.2)
@@ -259,6 +261,7 @@ DEPENDENCIES
   carrierwave
   chartkick
   enum_help
+  faker (~> 2.15, >= 2.15.1)
   geocoder
   groupdate (~> 4.2)
   jbuilder (~> 2.7)
